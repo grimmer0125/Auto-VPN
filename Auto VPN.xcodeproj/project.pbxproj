@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8E067E5D18CBFEB5009FA384 /* LoginHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E067E5C18CBFEB5009FA384 /* LoginHelper.m */; };
+		8E0EED2618CAF7FF0092EB3E /* SmilingMan.icns in Resources */ = {isa = PBXBuildFile; fileRef = 8E0EED2518CAF7FF0092EB3E /* SmilingMan.icns */; };
+		8E257F3F18CAFE15001EAA80 /* autovpnStatusBarIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E257F3E18CAFE15001EAA80 /* autovpnStatusBarIcon.png */; };
 		8EEF085518CABCAE0035B156 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8EEF085418CABCAE0035B156 /* Cocoa.framework */; };
 		8EEF085718CABCAE0035B156 /* AppleScriptObjC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8EEF085618CABCAE0035B156 /* AppleScriptObjC.framework */; };
 		8EEF086118CABCAE0035B156 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8EEF085F18CABCAE0035B156 /* InfoPlist.strings */; };
@@ -15,9 +18,14 @@
 		8EEF086918CABCAE0035B156 /* AppDelegate.applescript in Sources */ = {isa = PBXBuildFile; fileRef = 8EEF086818CABCAE0035B156 /* AppDelegate.applescript */; };
 		8EEF086C18CABCAE0035B156 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8EEF086A18CABCAE0035B156 /* MainMenu.xib */; };
 		8EEF086E18CABCAE0035B156 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8EEF086D18CABCAE0035B156 /* Images.xcassets */; };
+		8EEF087A18CAD18B0035B156 /* Enhancer.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EEF087918CAD18B0035B156 /* Enhancer.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8E067E5B18CBFEB5009FA384 /* LoginHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginHelper.h; sourceTree = "<group>"; };
+		8E067E5C18CBFEB5009FA384 /* LoginHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginHelper.m; sourceTree = "<group>"; };
+		8E0EED2518CAF7FF0092EB3E /* SmilingMan.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = SmilingMan.icns; sourceTree = "<group>"; };
+		8E257F3E18CAFE15001EAA80 /* autovpnStatusBarIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = autovpnStatusBarIcon.png; sourceTree = "<group>"; };
 		8EEF085118CABCAE0035B156 /* Auto VPN.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Auto VPN.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8EEF085418CABCAE0035B156 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		8EEF085618CABCAE0035B156 /* AppleScriptObjC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppleScriptObjC.framework; path = System/Library/Frameworks/AppleScriptObjC.framework; sourceTree = SDKROOT; };
@@ -32,6 +40,8 @@
 		8EEF086818CABCAE0035B156 /* AppDelegate.applescript */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.applescript; path = AppDelegate.applescript; sourceTree = "<group>"; };
 		8EEF086B18CABCAE0035B156 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		8EEF086D18CABCAE0035B156 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		8EEF087818CAD18B0035B156 /* Enhancer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Enhancer.h; sourceTree = "<group>"; };
+		8EEF087918CAD18B0035B156 /* Enhancer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Enhancer.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,6 +60,7 @@
 		8EEF084818CABCAD0035B156 = {
 			isa = PBXGroup;
 			children = (
+				8E0EED2518CAF7FF0092EB3E /* SmilingMan.icns */,
 				8EEF085C18CABCAE0035B156 /* Auto VPN */,
 				8EEF085318CABCAE0035B156 /* Frameworks */,
 				8EEF085218CABCAE0035B156 /* Products */,
@@ -87,6 +98,11 @@
 		8EEF085C18CABCAE0035B156 /* Auto VPN */ = {
 			isa = PBXGroup;
 			children = (
+				8E257F3E18CAFE15001EAA80 /* autovpnStatusBarIcon.png */,
+				8EEF087818CAD18B0035B156 /* Enhancer.h */,
+				8E067E5B18CBFEB5009FA384 /* LoginHelper.h */,
+				8E067E5C18CBFEB5009FA384 /* LoginHelper.m */,
+				8EEF087918CAD18B0035B156 /* Enhancer.m */,
 				8EEF086818CABCAE0035B156 /* AppDelegate.applescript */,
 				8EEF086A18CABCAE0035B156 /* MainMenu.xib */,
 				8EEF086D18CABCAE0035B156 /* Images.xcassets */,
@@ -159,9 +175,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8E0EED2618CAF7FF0092EB3E /* SmilingMan.icns in Resources */,
 				8EEF086118CABCAE0035B156 /* InfoPlist.strings in Resources */,
 				8EEF086E18CABCAE0035B156 /* Images.xcassets in Resources */,
 				8EEF086718CABCAE0035B156 /* Credits.rtf in Resources */,
+				8E257F3F18CAFE15001EAA80 /* autovpnStatusBarIcon.png in Resources */,
 				8EEF086C18CABCAE0035B156 /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -174,6 +192,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				8EEF086918CABCAE0035B156 /* AppDelegate.applescript in Sources */,
+				8E067E5D18CBFEB5009FA384 /* LoginHelper.m in Sources */,
+				8EEF087A18CAD18B0035B156 /* Enhancer.m in Sources */,
 				8EEF086318CABCAE0035B156 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -279,7 +299,6 @@
 		8EEF087218CABCAE0035B156 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Auto VPN/Auto VPN-Prefix.pch";
@@ -292,7 +311,6 @@
 		8EEF087318CABCAE0035B156 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Auto VPN/Auto VPN-Prefix.pch";
@@ -321,6 +339,7 @@
 				8EEF087318CABCAE0035B156 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
