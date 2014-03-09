@@ -38,10 +38,19 @@ script AppDelegate
     property idleTime : 2.0
     
     on setupVPN()
+        
+        log "setup vpn1"
         set vpnStr to do shell script "networksetup -listnetworkserviceorder |sed -n '/Port: PPTP/{g;1!p;};h' | sed 's/.[0-9]*..//' |tr \"\n\" \";\""
+        
         
         set vpnList1 to my theSplit(vpnStr, ";")
         
+        if(vpnList1 as text) = ""
+            log "vpn is empty"
+        end if
+        
+        --log "setup vpn2:" & (vpnList1 as text)
+
         set vpnList2 to {}
         
         repeat with theItem in vpnList1
@@ -59,15 +68,25 @@ script AppDelegate
             end if
         end repeat
     
-        set chooseresult to (choose from list vpnList2 with prompt "Usually you need to use this VPN to access some resources, e.g. company internel network." default items (text item defaultNumber of vpnList2) with title "VPN Selection" OK button name "OK")
-        
-        if (chooseresult as text) is "false"
-            --cancel
+        log "setup vpn3"
+
+        set messageBody to "Usually you need to use this VPN to access some resources, e.g. company internel network."
+
+        if (count of vpnList2) =0 then
+            set dialogresult to the text returned of (display dialog messageBody default answer myVPNService with title "VPN Setup")
+            if dialogresult is not equal to "" then
+                set myVPNService to dialogresult
+            end if
         else
-            set myVPNService to (chooseresult as text)
+            set chooseresult to (choose from list vpnList2 with prompt messageBody default items (text item defaultNumber of vpnList2) with title "VPN Selection" OK button name "OK")
+            
+            if (chooseresult as text) is "false"
+            --cancel
+            else
+                set myVPNService to (chooseresult as text)
+            end if
         end if
-        
-        
+
         --repeat with theItem in ssidSET
         --    display dialog "ssid:" & theItem
         --end repeat
@@ -121,7 +140,7 @@ script AppDelegate
         set appRunningList to {}
         
         repeat with theItem in appList
-            if application theItem is running then
+            if ApplicationIsRunning(theItem) then
                 set the end of appRunningList to true
                 else
                 set the end of appRunningList to false
@@ -186,7 +205,7 @@ script AppDelegate
         end if
     end setupSSIDmode
 
-    on setupParameters()
+    on getData()
         
         tell standardUserDefaults() of current application's NSUserDefaults
             registerDefaults_({myVPNService:myVPNService}) -- register the starting user default key:value items
@@ -203,9 +222,9 @@ script AppDelegate
             set ifExclusemode to objectForKey_("ifExclusemode") as boolean
             set ssidSET to objectForKey_("ssidSET") as list
             set appList to objectForKey_("appList") as list
-
+            
             log "vpn:" & myVPNService
-
+            
             if ifExclusemode = true
                 log "company ssid:" & ssidSET
             else
@@ -217,21 +236,21 @@ script AppDelegate
             else
                 log "is in disable mode"
             end if
-        
+
             log "app:" & appList
-            
+
         end tell
+
         setupAppRunninglist()
 
+    end getData
+
+    on setupParametersAtStartup()
         --set myVPNService to ""
 
         if (myVPNService is "") or  (count of ssidSET is 0) or (count of appList is 0)
             if ifRunnable is true
-                setupVPN()
-                setupSSIDmode()
-                setupSSID()
-                setupApplist()
-                saveData()
+                setupAllsetting()
             end if
         end if
 
@@ -332,35 +351,38 @@ script AppDelegate
         if isConnectedHomeAP is false then
             return idleTime
         end if
-        
+
         -- judge if vpn connected
-        tell application "System Events"
-            tell current location of network preferences
-                
-                set myConnection to the service myVPNService
-                
-                if current configuration of myConnection is not connected then
-                    
-                else
-                    set isVpnConnected to true
-                end if
+        try
+            tell application "System Events"
+                    tell current location of network preferences
+                        
+                        set myConnection to the service myVPNService
+                        
+                        if current configuration of myConnection is not connected then
+                            
+                        else
+                            set isVpnConnected to true
+                        end if
+                    end tell
+               
             end tell
-        end tell
-        
+        end try
+
+        --log "after try vpn info"
+
         --judge if apps are running
         repeat with i from 1 to count of appList
 
             set theItem to item i of appList
-            
-
-            if application theItem is running then
+            try
+                if ApplicationIsRunning(theItem) then
                 
-                set isAnyAppRunning to true
+                    set isAnyAppRunning to true
                 
-                set item i of appRunningList to true
+                    set item i of appRunningList to true
                 
-                if isVpnConnected is false then
-                    try
+                    if isVpnConnected is false then
                         --reConnect vpn
                         if isVpnConnecting is false then
                             set isVpnConnecting to true
@@ -390,11 +412,12 @@ script AppDelegate
                         tell application theItem
                             run
                         end tell
-                    end try
-                end if
+                    
+                    end if
                 else
-                set item i of appRunningList to false
-            end if
+                    set item i of appRunningList to false
+                end if
+            end try
             -- do something with thisItem
         end repeat
         
@@ -406,9 +429,9 @@ script AppDelegate
             log "try to disconnect:" & myVPNService
             tell application "System Events"
                 tell current location of network preferences
-                    set myConnection to the service myVPNService
                     try
-                        disconnect myConnection
+                        set myConnection to the service myVPNService
+                            disconnect myConnection
                     end try
                 end tell
             end tell
@@ -416,6 +439,11 @@ script AppDelegate
         end if
         return idleTime
     end idle
+
+    on ApplicationIsRunning(appName)
+        tell application "System Events" to set appNameIsRunning to exists (processes where name is appName)
+        return appNameIsRunning
+    end ApplicationIsRunning
 
     on btnQuit_(sender)
         tell current application to quit
@@ -442,11 +470,7 @@ script AppDelegate
             runnableMenuItem's setTitle:"In Running mode. Click here to disable."
             
             if (myVPNService is "") or  (count of ssidSET is 0) or (count of appList is 0)
-                setupVPN()
-                setupSSIDmode()
-                setupSSID()
-                setupApplist()
-                saveData()
+                setupAllsetting()
             end if
 
             resetInfoOnStatus()
@@ -463,13 +487,29 @@ script AppDelegate
         
     end toggleRunMode_
 
-    on reset_(sender)
-        setupVPN()
+    on setupAllsetting()
+        try
+            setupVPN()
+        on error errMsg number errorNumber
+            display dialog "no vpn"
+        end try
+        
         setupSSIDmode()
-        setupSSID()
-        setupApplist()
+        
+        try
+            setupSSID()
+        end try
+        
+        try
+            setupApplist()
+        end try
+        
         saveData()
         
+    end setupAllsetting
+
+    on reset_(sender)
+        setupAllsetting()
         resetInfoOnStatus()
         --tell current application to quit
 	end reset_
@@ -512,8 +552,7 @@ script AppDelegate
         startupMenuItem's setEnabled_ (true)
         statusMenu's addItem_ (startupMenuItem)
 
-        --start script
-        setupParameters()
+        getData()
 
         --runnable menu
         set runnableMenuItem to (my NSMenuItem's alloc)'s init
@@ -538,6 +577,9 @@ script AppDelegate
         menuItem's setKeyEquivalent_ ("q")
         menuItem's setEnabled_ (true)
         statusMenu's addItem_ (menuItem)
+
+        --start script
+        setupParametersAtStartup()
 
         my enableIdleWithHandler_("idler")
 
