@@ -40,7 +40,7 @@ script AppDelegate
     on setupVPN()
         
         log "setup vpn1"
-        set vpnStr to do shell script "networksetup -listnetworkserviceorder |sed -n '/Port: PPTP/{g;1!p;};h' | sed 's/.[0-9]*..//' |tr \"\n\" \";\""
+        set vpnStr to do shell script "networksetup -listnetworkserviceorder |sed -n -E '/Port: PPTP|Port: L2TP|Port: IPSec/{g;1!p;};h' | sed 's/.[0-9]*..//' |tr \"\n\" \";\""
         
         
         set vpnList1 to my theSplit(vpnStr, ";")
