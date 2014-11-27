@@ -2,7 +2,7 @@ Auto-VPN
 ========
 It is written by AppleScriptObjC. The function is automatically making your Macs to switching on/off VPNs under some enviornments. In the early stage, it mainly uses SSIDs to judge different enviornments. For example, switch on office's VPN when you are at home. 
 
-Features
+Features:
 1. choose VPN, SSID and app from UI choose list instead of typing them.
 2. there is a status bar menu for Auto-vpn app.
 3. users can setup enable/disable mode from status bar.
