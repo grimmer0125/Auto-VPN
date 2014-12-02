@@ -110,8 +110,12 @@ script AppDelegate
             --set ssidSET to my theSplit(ssidSTR, ";")
         end if
         
+        log "setup ssid1"
+
         set prefssidStr to do shell script "networksetup -listpreferredwirelessnetworks `/usr/sbin/networksetup -listnetworkserviceorder | grep -i 'Wi-Fi\\|AirPort' | grep -iow en.` | sed '1d' |sed 's/^[ 	]*//g' | tr \"\n\" \";\""
-        
+
+        log "setup ssid2"
+
         set prefssidList1 to my theSplit(prefssidStr, ";")
         
         set prefssidList2 to {}
@@ -256,7 +260,7 @@ script AppDelegate
 
         resetInfoOnStatus()
 
-    end setupParameters
+    end setupParametersAtStartup
 
     on resetInfoOnStatus()
         log "adjust reset info"

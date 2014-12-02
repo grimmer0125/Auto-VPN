@@ -26,16 +26,17 @@
 		8E067E5C18CBFEB5009FA384 /* LoginHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginHelper.m; sourceTree = "<group>"; };
 		8E0EED2518CAF7FF0092EB3E /* SmilingMan.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = SmilingMan.icns; sourceTree = "<group>"; };
 		8E257F3E18CAFE15001EAA80 /* autovpnStatusBarIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = autovpnStatusBarIcon.png; sourceTree = "<group>"; };
-		8EEF085118CABCAE0035B156 /* Auto VPN.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Auto VPN.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8E95DE3B1A2E009000752910 /* AutoVPN.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = AutoVPN.entitlements; sourceTree = "<group>"; };
+		8EEF085118CABCAE0035B156 /* AutoVPN.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AutoVPN.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8EEF085418CABCAE0035B156 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		8EEF085618CABCAE0035B156 /* AppleScriptObjC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppleScriptObjC.framework; path = System/Library/Frameworks/AppleScriptObjC.framework; sourceTree = SDKROOT; };
 		8EEF085918CABCAE0035B156 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		8EEF085A18CABCAE0035B156 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		8EEF085B18CABCAE0035B156 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		8EEF085E18CABCAE0035B156 /* Auto VPN-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Auto VPN-Info.plist"; sourceTree = "<group>"; };
+		8EEF085E18CABCAE0035B156 /* AutoVPN-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "AutoVPN-Info.plist"; sourceTree = "<group>"; };
 		8EEF086018CABCAE0035B156 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		8EEF086218CABCAE0035B156 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		8EEF086418CABCAE0035B156 /* Auto VPN-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Auto VPN-Prefix.pch"; sourceTree = "<group>"; };
+		8EEF086418CABCAE0035B156 /* AutoVPN-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AutoVPN-Prefix.pch"; sourceTree = "<group>"; };
 		8EEF086618CABCAE0035B156 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
 		8EEF086818CABCAE0035B156 /* AppDelegate.applescript */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.applescript; path = AppDelegate.applescript; sourceTree = "<group>"; };
 		8EEF086B18CABCAE0035B156 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
@@ -60,6 +61,7 @@
 		8EEF084818CABCAD0035B156 = {
 			isa = PBXGroup;
 			children = (
+				8E95DE3B1A2E009000752910 /* AutoVPN.entitlements */,
 				8E0EED2518CAF7FF0092EB3E /* SmilingMan.icns */,
 				8EEF085C18CABCAE0035B156 /* Auto VPN */,
 				8EEF085318CABCAE0035B156 /* Frameworks */,
@@ -70,7 +72,7 @@
 		8EEF085218CABCAE0035B156 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				8EEF085118CABCAE0035B156 /* Auto VPN.app */,
+				8EEF085118CABCAE0035B156 /* AutoVPN.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -114,10 +116,10 @@
 		8EEF085D18CABCAE0035B156 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				8EEF085E18CABCAE0035B156 /* Auto VPN-Info.plist */,
+				8EEF085E18CABCAE0035B156 /* AutoVPN-Info.plist */,
 				8EEF085F18CABCAE0035B156 /* InfoPlist.strings */,
 				8EEF086218CABCAE0035B156 /* main.m */,
-				8EEF086418CABCAE0035B156 /* Auto VPN-Prefix.pch */,
+				8EEF086418CABCAE0035B156 /* AutoVPN-Prefix.pch */,
 				8EEF086518CABCAE0035B156 /* Credits.rtf */,
 			);
 			name = "Supporting Files";
@@ -126,9 +128,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		8EEF085018CABCAE0035B156 /* Auto VPN */ = {
+		8EEF085018CABCAE0035B156 /* AutoVPN */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 8EEF087118CABCAE0035B156 /* Build configuration list for PBXNativeTarget "Auto VPN" */;
+			buildConfigurationList = 8EEF087118CABCAE0035B156 /* Build configuration list for PBXNativeTarget "AutoVPN" */;
 			buildPhases = (
 				8EEF084D18CABCAE0035B156 /* Sources */,
 				8EEF084E18CABCAE0035B156 /* Frameworks */,
@@ -138,9 +140,9 @@
 			);
 			dependencies = (
 			);
-			name = "Auto VPN";
+			name = AutoVPN;
 			productName = "Auto VPN";
-			productReference = 8EEF085118CABCAE0035B156 /* Auto VPN.app */;
+			productReference = 8EEF085118CABCAE0035B156 /* AutoVPN.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -151,8 +153,24 @@
 			attributes = {
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = "Grimmer Kang";
+				TargetAttributes = {
+					8EEF085018CABCAE0035B156 = {
+						DevelopmentTeam = GL35G6YCWG;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 0;
+							};
+							com.apple.Sandbox = {
+								enabled = 0;
+							};
+							com.apple.iCloud = {
+								enabled = 0;
+							};
+						};
+					};
+				};
 			};
-			buildConfigurationList = 8EEF084C18CABCAD0035B156 /* Build configuration list for PBXProject "Auto VPN" */;
+			buildConfigurationList = 8EEF084C18CABCAD0035B156 /* Build configuration list for PBXProject "AutoVPN" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -165,7 +183,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				8EEF085018CABCAE0035B156 /* Auto VPN */,
+				8EEF085018CABCAE0035B156 /* AutoVPN */,
 			);
 		};
 /* End PBXProject section */
@@ -299,11 +317,14 @@
 		8EEF087218CABCAE0035B156 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Auto VPN/Auto VPN-Prefix.pch";
-				INFOPLIST_FILE = "Auto VPN/Auto VPN-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				GCC_PREFIX_HEADER = "Auto VPN/AutoVPN-Prefix.pch";
+				INFOPLIST_FILE = "Auto VPN/AutoVPN-Info.plist";
+				PRODUCT_NAME = AutoVPN;
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -311,11 +332,14 @@
 		8EEF087318CABCAE0035B156 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Auto VPN/Auto VPN-Prefix.pch";
-				INFOPLIST_FILE = "Auto VPN/Auto VPN-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				GCC_PREFIX_HEADER = "Auto VPN/AutoVPN-Prefix.pch";
+				INFOPLIST_FILE = "Auto VPN/AutoVPN-Info.plist";
+				PRODUCT_NAME = AutoVPN;
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -323,7 +347,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		8EEF084C18CABCAD0035B156 /* Build configuration list for PBXProject "Auto VPN" */ = {
+		8EEF084C18CABCAD0035B156 /* Build configuration list for PBXProject "AutoVPN" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				8EEF086F18CABCAE0035B156 /* Debug */,
@@ -332,7 +356,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		8EEF087118CABCAE0035B156 /* Build configuration list for PBXNativeTarget "Auto VPN" */ = {
+		8EEF087118CABCAE0035B156 /* Build configuration list for PBXNativeTarget "AutoVPN" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				8EEF087218CABCAE0035B156 /* Debug */,

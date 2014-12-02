@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "8EEF085018CABCAE0035B156"
-               BuildableName = "Auto VPN.app"
-               BlueprintName = "Auto VPN"
-               ReferencedContainer = "container:Auto VPN.xcodeproj">
+               BuildableName = "AutoVPN.app"
+               BlueprintName = "AutoVPN"
+               ReferencedContainer = "container:AutoVPN.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "8EEF085018CABCAE0035B156"
-            BuildableName = "Auto VPN.app"
-            BlueprintName = "Auto VPN"
-            ReferencedContainer = "container:Auto VPN.xcodeproj">
+            BuildableName = "AutoVPN.app"
+            BlueprintName = "AutoVPN"
+            ReferencedContainer = "container:AutoVPN.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -52,9 +52,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "8EEF085018CABCAE0035B156"
-            BuildableName = "Auto VPN.app"
-            BlueprintName = "Auto VPN"
-            ReferencedContainer = "container:Auto VPN.xcodeproj">
+            BuildableName = "AutoVPN.app"
+            BlueprintName = "AutoVPN"
+            ReferencedContainer = "container:AutoVPN.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -70,9 +70,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "8EEF085018CABCAE0035B156"
-            BuildableName = "Auto VPN.app"
-            BlueprintName = "Auto VPN"
-            ReferencedContainer = "container:Auto VPN.xcodeproj">
+            BuildableName = "AutoVPN.app"
+            BlueprintName = "AutoVPN"
+            ReferencedContainer = "container:AutoVPN.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
