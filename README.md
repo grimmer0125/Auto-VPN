@@ -1,5 +1,5 @@
-Auto-VPN
-========
+## Auto-VPN
+
 It is written by AppleScriptObjC. The function is automatically making your Macs to switching on/off VPNs under some enviornments. In the early stage, it mainly uses SSIDs to judge different enviornments. For example, switch on office's VPN when you are at home. 
 
 Features:
@@ -12,3 +12,6 @@ Features:
 6. users can add Auto-vpn app to start-up list of Mac os from status bar.
 7. retina support, since this is a cocoa-applescript application (a.k.a. AppleScriptObjC). 
 8. support PPTP, L2TP and IPSec.
+
+## Download installer
+[https://github.com/grimmer0125/Auto-VPN/releases](https://github.com/grimmer0125/Auto-VPN/releases)
